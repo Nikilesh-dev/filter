@@ -1,0 +1,152 @@
+﻿<Window x:Class="Linq_filter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Linq_filter"
+        mc:Ignorable="d"
+          Title="AMAZON" Height="{x:Static SystemParameters.PrimaryScreenHeight}" Width="{x:Static SystemParameters.PrimaryScreenWidth}">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextBlock.FontSize" Value="20"></Setter>
+            <Setter Property="TextBlock.FontWeight" Value="Medium"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="TextBlock.FontSize" Value="17"></Setter>
+            <Setter Property="TextBlock.FontWeight" Value="Medium"></Setter>
+            <Setter Property="TextBlock.Width" Value="250"></Setter>
+            <Setter Property="TextBlock.Height" Value="35"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="TextBlock.FontSize" Value="17"></Setter>
+            <Setter Property="TextBlock.FontWeight" Value="Medium"></Setter>
+            <Setter Property="TextBlock.Width" Value="100"></Setter>
+            <Setter Property="TextBlock.Height" Value="35"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="Background" Value="#f3d179"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontWeight" Value="Medium"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontWeight" Value="Medium"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+      
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" ></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.Background>
+                <SolidColorBrush Color="#131921"></SolidColorBrush>
+            </Grid.Background>
+            <StackPanel  Grid.Row="0" Grid.ColumnSpan="2"  Margin="0,0,0,0"  >
+                <Label Content="FASHION.in" Margin="0,-10,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Top" FontFamily="Comic Sans MS" Foreground="White" >
+                   
+                    <Label.Style>
+                        <Style>
+                            <Setter Property="TextBlock.FontSize" Value="58"></Setter>
+                            <Setter Property="TextBlock.FontWeight" Value="Bold"></Setter>
+                        </Style>
+                    </Label.Style>
+
+                </Label>
+            </StackPanel>
+        </Grid>
+       
+     
+       
+        <Grid Grid.Column="0" Grid.Row="1" Height="780">
+            <Grid.Background>
+                <SolidColorBrush Color="#f3d179" ></SolidColorBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Filters" Margin="20,40,0,0" FontSize="35" ></Label>
+            <StackPanel Grid.Row="1" Margin="20,20,0,0" >
+                <Label Content="Prize" Margin="0,0,0,0" FontSize="28"></Label>
+                <RadioButton Content="Price Hight to Low" x:Name="htol" Margin="0,15,0,0" Checked="htol_Checked"></RadioButton>
+                <RadioButton Content="Price Low to High" x:Name="ltoh" Margin="0,15,0,0" Checked="htol_Checked"></RadioButton>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Margin="20,20,0,0">
+                <Label Content="Rating" Margin="0,0,0,0" FontSize="28" ></Label>
+                <RadioButton Content="High Rated" x:Name="checkhigh" Margin="0,15,0,0" Checked="checkhigh_Checked"></RadioButton>
+                <RadioButton Content="Average Rated" x:Name="checkAver" Margin="0,15,0,0" Checked="checkhigh_Checked"></RadioButton>
+                <RadioButton Content="Below Average" x:Name="below" Margin="0,15,0,0" Checked="checkhigh_Checked"></RadioButton>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Margin="20,20,0,0">
+                <Label Content="Shipping" Margin="0,0,0,0" FontSize="28"></Label>
+                <RadioButton Content="Prime" x:Name="prime" Margin="0,15,0,0" Checked="prime_Checked"></RadioButton>
+                <RadioButton Content="Non-Prime" x:Name="nonprime" Margin="0,15,0,0" Checked="prime_Checked"></RadioButton>
+
+            </StackPanel>
+            <StackPanel Grid.Row="4" Margin="20,20,0,0">
+                <Label Content="Purchase" Margin="0,0,0,0" FontSize="28"></Label>
+                <CheckBox Content="Frequently Purchased" x:Name="frequent" Margin="0,15,0,0" Checked="frequent_Checked" ></CheckBox>
+                
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1" Height="780">
+            <Grid.Background>
+                <SolidColorBrush Color="#d6e6cd"></SolidColorBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal"   Margin="200,60,0,0">
+                <Label Content="Product Name : "></Label>
+                <TextBox x:Name="txtproductsearch"></TextBox>
+                <Button x:Name="prosearch" Content="SEARCH" Margin="20,0,0,0" Click="prosearch_Click"></Button>
+               
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="200,30,0,0">
+                <Label Content="Prize Range Between : "></Label>
+                <TextBox x:Name="txtRone" Width="100" Margin="10,0,15,0"></TextBox>
+                <Label Content="To"></Label>
+                <TextBox x:Name="txtRtwo" Width="100" Margin="15,0,50,0"></TextBox>
+                <Button x:Name="prizecheck" Content="CHECK" Margin="20,0,0,0" Click="prizecheck_Click" ></Button>
+            </StackPanel>
+            <ListView x:Name="listview" Grid.Row="3"  Grid.Column="1" Height="550" Width="990" HorizontalAlignment="Left" Margin="200,40,0,0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID"  Width="100" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
+                        <GridViewColumn Header="Product Name" Width="200" DisplayMemberBinding="{Binding Pname}"></GridViewColumn>
+                        <GridViewColumn Header="Prize" Width="150" DisplayMemberBinding="{Binding prize}" ></GridViewColumn>
+                        <GridViewColumn Header="Rating out of /5" Width="180" DisplayMemberBinding="{Binding rating}"></GridViewColumn>
+                        <GridViewColumn Header="Frequenty purchased" Width="220" DisplayMemberBinding="{Binding purchase}"></GridViewColumn>
+                        <GridViewColumn Header="Shipping" Width="120" DisplayMemberBinding="{Binding ship}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+                <ListView.Style>
+                    <Style>
+                        <Setter Property="TextBlock.FontSize" Value="20"></Setter>
+                        <Setter Property="TextBlock.FontWeight" Value="Medium"></Setter>
+                    </Style>
+                </ListView.Style>
+            </ListView>
+        </Grid>
+    </Grid>
+</Window>
